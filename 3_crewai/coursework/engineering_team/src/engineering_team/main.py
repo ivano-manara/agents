@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import sys
 import warnings
-
 from datetime import datetime
 
-from debate.crew import Debate
+
+from engineering_team.crew import EngineeringTeam
+from .tools.sandbox_tools import reset_sandbox
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -13,17 +14,46 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
+requirements = """
+Un semplice sistema di gestione dei conti per una piattaforma di simulazione del trading.
+
+Il sistema deve consentire agli utenti di creare un account, depositare fondi e prelevare denaro.
+
+Il sistema deve consentire agli utenti di registrare l'acquisto o la vendita di azioni,
+specificando la quantità.
+
+Il sistema deve calcolare il valore totale del portafoglio dell'utente e il profitto o la perdita
+rispetto al deposito iniziale.
+
+Il sistema deve essere in grado di fornire la situazione delle partecipazioni dell'utente
+in qualsiasi momento.
+
+Il sistema deve essere in grado di fornire il profitto o la perdita dell'utente
+in qualsiasi momento.
+
+Il sistema deve essere in grado di elencare le transazioni effettuate dall'utente nel corso del tempo.
+
+Il sistema deve impedire all'utente:
+- di prelevare fondi in modo tale da portare il saldo a un valore negativo;
+- di acquistare un numero di azioni superiore a quello che può permettersi;
+- di vendere azioni che non possiede.
+
+Il sistema ha accesso a una funzione get_share_price(symbol) che restituisce il prezzo corrente
+di un'azione e include un'implementazione di test che restituisce prezzi fissi per AAPL, TSLA e GOOGL.
+"""
+
+
 def run():
     """
     Run the crew.
     """
-    motion= input("Presentare la mozione:")
-    inputs= { "motion" :motion}
-
-
+    inputs = {
+        'requirements': requirements,
+    }
 
     try:
-        Debate().crew().kickoff(inputs=inputs)
+        reset_sandbox()
+        EngineeringTeam().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -37,7 +67,7 @@ def train():
         'current_year': str(datetime.now().year)
     }
     try:
-        Debate().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        EngineeringTeam().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -47,7 +77,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Debate().crew().replay(task_id=sys.argv[1])
+        EngineeringTeam().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -62,7 +92,7 @@ def test():
     }
 
     try:
-        Debate().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
+        EngineeringTeam().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
@@ -88,7 +118,7 @@ def run_with_trigger():
     }
 
     try:
-        result = Debate().crew().kickoff(inputs=inputs)
+        result = EngineeringTeam().crew().kickoff(inputs=inputs)
         return result
     except Exception as e:
         raise Exception(f"An error occurred while running the crew with trigger: {e}")

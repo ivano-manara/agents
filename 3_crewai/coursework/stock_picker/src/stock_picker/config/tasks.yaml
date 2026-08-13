@@ -1,0 +1,41 @@
+find_trending_companies:
+  description: >
+    Individuare le aziende più interessanti e di tendenza presenti nelle notizie
+    nel settore {sector} alla data {current_date}, effettuando una ricerca sulle
+    notizie più recenti. Individuare nuove aziende che non siano già state trovate
+    in precedenza.
+  expected_output: >
+    Un elenco delle aziende più interessanti e di tendenza nel settore {sector}
+  agent: trending_company_finder
+  output_file: output/trending_companies.json
+
+
+research_trending_companies:
+  description: >
+    A partire dall'elenco delle aziende di tendenza, fornire un'analisi dettagliata
+    di ciascuna azienda attraverso una ricerca online. Assicurarsi che la ricerca
+    sia aggiornata alla data {current_date}.
+  expected_output: >
+    Un report contenente un'analisi dettagliata di ciascuna azienda
+  agent: financial_researcher
+  context:
+    - find_trending_companies
+  output_file: output/research_report.json
+
+
+pick_best_company:
+  description: >
+    Analizzare i risultati della ricerca e selezionare la migliore azienda
+    dal punto di vista di un potenziale investimento. Assicurarsi che la ricerca
+    sia aggiornata alla data {current_date}.
+    Inviare all'utente una notifica push con la decisione e una motivazione
+    di una frase.
+    Successivamente, fornire un report dettagliato che spieghi perché è stata
+    scelta questa azienda e quali aziende non sono state selezionate.
+  expected_output: >
+    L'azienda scelta e le motivazioni della scelta; le aziende non selezionate
+    e le motivazioni per cui non sono state scelte.
+  agent: stock_picker
+  context:
+    - research_trending_companies
+  output_file: output/decision.md

@@ -1,0 +1,92 @@
+design_task:
+  description: >
+    Prendere i requisiti di alto livello descritti qui e preparare una progettazione
+    dettagliata per il team di sviluppo.
+    Ecco i requisiti: {requirements}
+    IMPORTANTE: produrre esclusivamente la progettazione in formato Markdown,
+    descrivendo i moduli, le classi e le funzioni.
+    Non scrivere effettivamente alcun codice. Fornire esclusivamente le firme
+    delle funzioni o dei metodi.
+    Assegnare il lavoro ai seguenti ingegneri: backend_engineer, frontend_engineer, test_engineer.
+    Il backend_engineer dovrà scrivere il codice Python del backend.
+    Il frontend_engineer dovrà realizzare un'applicazione Gradio.
+    Il test_engineer dovrà scrivere gli unit test per il modulo backend.
+    Tutti gli ingegneri lavoreranno nella stessa directory sandbox.
+    Non esiste una struttura di directory: tutti i file si trovano nella stessa directory.
+    Tutto viene eseguito all'interno di un progetto uv con Gradio installato.
+
+  expected_output: >
+    Una progettazione dettagliata per soddisfare i requisiti, identificando
+    la struttura del codice e le assegnazioni delle attività ai vari ingegneri.
+
+  agent: engineering_lead
+  output_file: sandbox/design.md
+
+
+code_task:
+  description: >
+    Scrivere il codice Python che implementa la progettazione descritta
+    dall'Engineering Lead, al fine di soddisfare i requisiti.
+    Ecco i requisiti: {requirements}
+  expected_output: >
+    File Python scritti nella sandbox e sottoposti a test, che implementano
+    la progettazione e soddisfano i requisiti.
+    IMPORTANTE: utilizzare gli strumenti della sandbox per scrivere e verificare
+    il codice.
+
+  agent: backend_engineer
+  context:
+    - design_task
+
+
+frontend_task:
+  description: >
+    Scrivere una UI Gradio nel modulo app.py che dimostri il funzionamento
+    del codice backend, come descritto nella progettazione.
+    Supporre che ci sia un solo utente e realizzare una UI professionale,
+    curata e pulita.
+    Scrivere quindi uno script di validazione separato (ad esempio _validate.py)
+    che importi app.py e verifichi che l'oggetto Blocks venga costruito senza errori,
+    quindi eseguirlo utilizzando gli strumenti della sandbox.
+    IMPORTANTE: lo script di validazione NON deve chiamare `.launch()`,
+    perché ciò bloccherebbe l'esecuzione fino al timeout.
+    Deve limitarsi a importare e istanziare l'applicazione.
+    Ecco i requisiti: {requirements}
+
+  expected_output: >
+    Una UI Gradio nel modulo app.py scritta nella sandbox che dimostri
+    le funzionalità dell'applicazione.
+    Il file deve essere pronto per essere eseguito direttamente, nella stessa
+    directory dei file del backend.
+    IMPORTANTE: utilizzare gli strumenti della sandbox per scrivere e verificare
+    il codice.
+
+  agent: frontend_engineer
+  context:
+    - code_task
+    - design_task
+
+
+test_task:
+  description: >
+    Scrivere gli unit test per il modulo backend, all'interno di un singolo file
+    di test, utilizzando il modulo `unittest` della libreria standard.
+    Non scrivere test per app.py (il frontend Gradio).
+    Correggere eventuali errori presenti nel codice backend affinché gli unit test
+    vengano superati.
+    Continuare a lavorare fino a quando tutti gli unit test non saranno superati.
+    Se viene modificato del codice backend, assicurarsi che gli unit test continuino
+    a essere superati e che l'applicazione Gradio in app.py continui a funzionare.
+    Evitare qualsiasi modifica che possa compromettere l'applicazione Gradio in app.py.
+
+  expected_output: >
+    Un singolo file di test che possa essere eseguito per verificare il modulo backend.
+    IMPORTANTE: utilizzare gli strumenti della sandbox per scrivere ed eseguire
+    gli unit test.
+    Fornire un riepilogo dei risultati degli unit test.
+
+  agent: test_engineer
+  context:
+    - code_task
+    - design_task
+  output_file: sandbox/test_summary.md

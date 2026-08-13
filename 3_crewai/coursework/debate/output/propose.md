@@ -1,0 +1,11 @@
+Sì: i LLM di frontiera vanno **limitati e regolamentati**, non resi apertamente disponibili a tutti senza vincoli.
+
+Il motivo è semplice: quando una tecnologia è abbastanza potente da amplificare in modo drastico capacità umane, anche i suoi errori e i suoi abusi diventano drastici. Un LLM di frontiera non è un semplice software: può facilitare frodi su larga scala, phishing più credibile, disinformazione industriale, automazione di cyberattacchi e produzione di contenuti manipolativi. In altre parole, abbassa il costo del danno e alza la scala del danno. Rendere tutto questo “open to all” senza controlli significa distribuire potere ad attori che non hanno né le competenze né le intenzioni giuste.
+
+C’è poi un secondo punto: **l’asimmetria del rischio**. I benefici dell’apertura sono diffusi e graduali; i danni potenziali sono concentrati e catastrofici. Se un modello aperto viene usato male, non pagano solo i creatori: paga l’intera società. Quando una tecnologia ha impatti sistemici su sicurezza, economia e informazione, lo Stato ha il dovere di stabilire standard, audit, tracciabilità e limiti d’uso. Non è censura: è responsabilità.
+
+Inoltre, la regolamentazione non uccide l’innovazione; la rende sostenibile. Le industrie davvero mature—farmaceutica, aviazione, energia—non sono lasciate al “tutti liberi di sperimentare”. Sono regolamentate proprio perché il potenziale beneficio è troppo grande per essere sacrificato a errori prevedibili. I LLM di frontiera sono allo stesso livello di impatto: meritano controlli su rilascio, accesso, test di sicurezza, monitoraggio e responsabilità legale.
+
+Infine, l’idea che “aprire tutto” favorisca automaticamente l’innovazione ignora una verità fondamentale: **l’innovazione senza fiducia si distrugge da sola**. Se cittadini, imprese e istituzioni non possono fidarsi che questi sistemi siano sicuri, trasparenti e tracciabili, l’adozione rallenterà comunque. Regolamentare oggi significa garantire un futuro in cui questa tecnologia possa essere usata davvero, e non temuta.
+
+Perciò la posizione è chiara: i LLM di frontiera non devono essere liberati senza freni. Devono essere **limitati, monitorati e regolamentati**, perché quando il potere è enorme, la libertà assoluta non è progresso: è imprudenza.

@@ -1,0 +1,13 @@
+Mi oppongo alla mozione che chiede di limitare e regolamentare i LLM di frontiera o di renderli pubblici aperti a tutti.
+
+La mia tesi è semplice: **l’accesso aperto è la scelta più giusta e più utile**. Limitare questi strumenti significa concentrare il potere nelle mani di pochi grandi attori, mentre renderli pubblici diffusi democratizza innovazione, conoscenza e opportunità.
+
+Primo: **la chiusura non elimina i rischi, li sposta**. I modelli di frontiera usati solo da governi o poche aziende non diventano più sicuri per magia; diventano solo meno controllabili dal pubblico. Quando una tecnologia è potente, la vera difesa non è nasconderla, ma distribuirne l’accesso in modo che più persone possano studiarla, correggerla e migliorarla. L’open access permette audit indipendenti, trasparenza e responsabilità reale, invece di fidarsi ciecamente di un’élite tecnica.
+
+Secondo: **limitare i LLM soffoca l’innovazione**. Ogni grande salto tecnologico è stato inizialmente accusato di essere troppo pericoloso. Ma la storia dimostra che il progresso arriva quando molte persone possono sperimentare liberamente, non quando pochi regolatori decidono in anticipo chi può innovare e chi no. Con modelli aperti, studenti, ricercatori, startup e piccoli sviluppatori possono creare applicazioni nuove, spesso molto più velocemente dei grandi incumbent. Regolare troppo presto significa congelare questo dinamismo.
+
+Terzo: **i benefici dell’apertura sono concreti e diffusi**. Un LLM accessibile a tutti può migliorare istruzione, produttività, assistenza alla scrittura, traduzione, programmazione e accesso alla conoscenza. Questo non è un vantaggio marginale: è un moltiplicatore sociale. Limitare l’accesso per paura degli abusi vuol dire negare questi benefici a milioni di persone oneste per colpa di una minoranza male intenzionata.
+
+Infine, l’argomento della sicurezza assoluta è ingannevole. **Nessuna tecnologia potente è priva di rischi**: la risposta non è bloccarla o centralizzarla, ma costruire una società capace di usarla bene. Educazione, alfabetizzazione digitale, norme contro gli abusi e responsabilità penale mirata sono strumenti migliori del controllo generalizzato.
+
+In conclusione: **non dobbiamo chiudere i LLM di frontiera dentro confini rigidi**. Dobbiamo renderli aperti, verificabili e accessibili, perché il vero pericolo non è la diffusione della potenza: è la sua concentrazione. L’innovazione più sicura non è quella più controllata da pochi, ma quella più condivisa da tutti.

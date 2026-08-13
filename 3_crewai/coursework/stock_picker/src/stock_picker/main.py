@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from debate.crew import Debate
+from stock_picker.crew import StockPicker
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -17,13 +17,14 @@ def run():
     """
     Run the crew.
     """
-    motion= input("Presentare la mozione:")
-    inputs= { "motion" :motion}
-
+    inputs = {
+        'sector': 'Technology',
+        "current_date": str(datetime.now().date())
+    }
 
 
     try:
-        Debate().crew().kickoff(inputs=inputs)
+        StockPicker().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -37,7 +38,7 @@ def train():
         'current_year': str(datetime.now().year)
     }
     try:
-        Debate().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        StockPicker().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -47,7 +48,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Debate().crew().replay(task_id=sys.argv[1])
+        StockPicker().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -62,7 +63,7 @@ def test():
     }
 
     try:
-        Debate().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
+        StockPicker().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
@@ -88,7 +89,7 @@ def run_with_trigger():
     }
 
     try:
-        result = Debate().crew().kickoff(inputs=inputs)
+        result = StockPicker().crew().kickoff(inputs=inputs)
         return result
     except Exception as e:
         raise Exception(f"An error occurred while running the crew with trigger: {e}")
